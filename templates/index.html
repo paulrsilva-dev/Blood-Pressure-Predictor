@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask-APP</title>
+
+    <!-- <script type="text/javascript">
+        function numbersOnly(oToCheckField, oKeyEvent) {
+            return oKeyEvent.charCode === 0 || /\d/.test(String.fromCharCode(oKeyEvent.charCode));
+        }
+    </script> -->
+
+</head>
+
+<style>
+    body {
+        width: 1512px;
+        text-align: center;
+    }
+
+    label {
+        width: 150px;
+        display: inline-block;
+        text-align: right;
+    }
+
+    p {
+        text-align: center;
+        font-size: 15px;
+    }
+
+    input {
+        width: 300px;
+        height: 30px;
+    }
+</style>
+
+<body>
+
+    <h2 color="red" style="font-size: 40px; color: #9e0c0c;">Blood Pressure Predictor</h2>
+
+    <p style="font-size: 30px; color: rgb(175, 7, 7);">Fill out the form to get your Blood Pressure estimate!</p>
+
+    <form method="post">
+        <div>
+            <div style="padding-top: 20px;">
+                <label for="ticketNum" style="font-size: 28px; font-weight: bold;">Age <span
+                        style="color : red;">*</span>&nbsp; </label>
+                <input type="number" id = "name" name="age" min="0" max="150" placeholder="Enter age in years" required>
+            </div>
+
+            <div style="padding-top: 20px; padding-bottom: 40px;">
+                <label for="ticketNum" style="font-size: 28px; font-weight: bold;">Weight <span
+                        style="color : red;">*</span>&nbsp;</label>
+                <input type="number" id = "weight" name="weight" min="0" max="500" placeholder="Enter weight in kg" required>
+            </div>
+        </div>
+
+
+        <input type="submit" name = "submit" value="Calculate"
+            style="background-color:#2048a0; width: 130px; height: 40px; color: white; font-size: 20px;">
+        </input>
+    </form>
+
+    {% if msg %}
+    <div style="padding-top: 20px; font-weight:bold">{{msg}}</div>
+    {%endif%}
+
+    <!-- <input type="text" name="money" value="" onKeypress="if (event.keyCode < 45 || event.keyCode > 57){alert('invalid input'); event.returnValue = false;}"> -->
+
+</body>
+
+</html>
